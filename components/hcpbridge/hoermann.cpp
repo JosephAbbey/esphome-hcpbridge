@@ -195,7 +195,7 @@ uint16_t HoermannGarageEngine::onDoorPositonChanged(TRegister *reg, uint16_t val
 
 uint16_t HoermannGarageEngine::onCurrentStateChanged(TRegister *reg, uint16_t val)
 {
-  ESP_LOGI(TAG_HCI, "onCurrentStateChanged. address=%x, value=%x (actual: %x)", reg->address.address, val, (val & 0xFF00) >> 8);
+  ESP_LOGI("hcpbridge.hoermann", "onCurrentStateChanged. address=%x, value=%x (actual: %x)", reg->address.address, val, (val & 0xFF00) >> 8);
   // on First Byte changed
   if (((reg->value & 0xFF00) != (val & 0xFF00)))
   {
