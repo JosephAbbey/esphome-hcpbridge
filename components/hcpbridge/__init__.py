@@ -1,4 +1,3 @@
-
 import esphome.codegen as cg
 import esphome.config_validation as cv
 from esphome.components import binary_sensor
@@ -21,8 +20,8 @@ HCPBridge = hcpbridge_ns.class_("HCPBridge", cg.Component)
 
 CONF_HCPBridge_ID = "hcpbridge_id"
 
-CONFIG_SCHEMA = (
-    cv.Schema({
+CONFIG_SCHEMA = cv.Schema(
+    {
         cv.GenerateID(): cv.declare_id(HCPBridge),
         cv.Required(CONF_IS_CONNECTED): binary_sensor.binary_sensor_schema(
             device_class=DEVICE_CLASS_CONNECTIVITY,
@@ -30,7 +29,7 @@ CONFIG_SCHEMA = (
         cv.Optional(CONF_RX_PIN): pins.gpio_input_pin_schema,
         cv.Optional(CONF_TX_PIN): pins.gpio_output_pin_schema,
         cv.Optional(CONF_RTS_PIN): pins.gpio_output_pin_schema,
-    })
+    }
 )
 
 
