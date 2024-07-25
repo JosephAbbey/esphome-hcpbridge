@@ -12,23 +12,24 @@ AUTO_LOAD = ["binary_sensor"]
 CONF_IS_CONNECTED = "is_connected"
 CONF_RTS_PIN = "rts_pin"
 
-
 hcpbridge_ns = cg.esphome_ns.namespace("hcpbridge")
 HCPBridge = hcpbridge_ns.class_("HCPBridge", cg.Component)
 
 CONF_HCPBridge_ID = "hcpbridge_id"
 
-CONFIG_SCHEMA = cv.Schema(
-    {
-        cv.GenerateID(): cv.declare_id(HCPBridge),
-        cv.Required(CONF_IS_CONNECTED): binary_sensor.binary_sensor_schema(
-            device_class=DEVICE_CLASS_CONNECTIVITY,
-        ),
-        cv.Optional(CONF_RX_PIN): pins.gpio_input_pin_schema,
-        cv.Optional(CONF_TX_PIN): pins.gpio_output_pin_schema,
-        cv.Optional(CONF_RTS_PIN): pins.gpio_output_pin_schema,
-    }
-)
+CONFIG_SCHEMA = cv.Schema({
+    cv.GenerateID():
+    cv.declare_id(HCPBridge),
+    cv.Required(CONF_IS_CONNECTED):
+    binary_sensor.binary_sensor_schema(
+        device_class=DEVICE_CLASS_CONNECTIVITY, ),
+    cv.Optional(CONF_RX_PIN):
+    pins.gpio_input_pin_schema,
+    cv.Optional(CONF_TX_PIN):
+    pins.gpio_output_pin_schema,
+    cv.Optional(CONF_RTS_PIN):
+    pins.gpio_output_pin_schema,
+})
 
 
 async def to_code(config):
