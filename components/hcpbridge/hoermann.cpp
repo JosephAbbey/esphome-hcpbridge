@@ -123,7 +123,7 @@ Modbus::ResultCode HoermannGarageEngine::onRequest(Modbus::FunctionCode fc, cons
   }
   else if (fc == Modbus::FC_WRITE_REGS && data.reg.address == 0x9D31)
   {
-    // ESP_LOGD("ON_REQ", "on Status Update (cnt: %d)",data.regCount);
+    ESP_LOGD("ON_REQ", "on Status Update (cnt: %d)",data.regCount);
   }
   else
   {

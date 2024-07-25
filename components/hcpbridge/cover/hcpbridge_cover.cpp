@@ -88,6 +88,7 @@ namespace esphome
         this->status_clear_warning();
       }
 
+      ESP_LOGD(TAG, "HCPBridgeCover::update() - engine state is %d", this->parent_->engine->state->state);
       switch (this->parent_->engine->state->state)
       {
       case HoermannState::OPENING:
