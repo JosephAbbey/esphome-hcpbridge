@@ -2,8 +2,10 @@ import esphome.codegen as cg
 import esphome.config_validation as cv
 from esphome import pins
 from esphome.components import binary_sensor
-from esphome.const import (CONF_ID, CONF_RX_PIN, CONF_TX_PIN,
-                           DEVICE_CLASS_CONNECTIVITY)
+from esphome.const import CONF_ID
+from esphome.const import CONF_RX_PIN
+from esphome.const import CONF_TX_PIN
+from esphome.const import DEVICE_CLASS_CONNECTIVITY
 
 AUTO_LOAD = ["binary_sensor"]
 
