@@ -140,7 +140,7 @@ public:
     void setPosition(int setPosition);
 
 private:
-    HoermannGarageEngine(){};
+    HoermannGarageEngine() {};
     ModbusRTU mb;                                 // ModbusRTU instance, the man behind the curtain
     const HoermannCommand *nextCommand = nullptr; // Next Command to transmit
     unsigned long commandWrittenOn = 0;           // When was last command written (wait 100ms before end of command is transmitted)
